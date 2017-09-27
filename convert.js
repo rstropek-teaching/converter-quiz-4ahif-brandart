@@ -1,9 +1,13 @@
 const temp = {};
-temp.operation;
+temp.operation; // What does this statement?
 
 if (process.argv.length-2 != 4) {
     printError();
 } else {
+    // No need for the `!!` in the next line.
+    // You convert the argument with `parseFloat` here. A few lines below you convert it again
+    // using the same method --> store the conversion result in a variable to speed up your code.
+    // Converting a string to a number is a relatively complex operation.
     if (!!parseFloat(process.argv[2])) {
         checkArgs(3);
         if(process.argv[4] !== 'to'){
